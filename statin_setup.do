@@ -38,4 +38,5 @@ global c_date:      display %tdCCYYNNDD date(c(current_date), "DMY")
 
 
 * Import data csv
-import delim "$data_path$system_sep$dataname", clear delim(",") varnames(1) charset("utf8")
+* import delim "$data_path$system_sep$dataname", clear delim(",") varnames(1) charset("utf8")
+use "$data_path$system_sep$datastata", clear
