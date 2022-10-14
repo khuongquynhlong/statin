@@ -6,7 +6,7 @@ cap log close _all
 clear 
 
 *----- Cài đặt các gói cần thiết 
-
+/*
 	capture which table1
 	if _rc == 111 {
 	ssc install table1
@@ -21,6 +21,8 @@ clear
 	net from http://www.stata-journal.com/software/sj14-2
 	net install st0085_2 
 	}
+
+*/
 
 
 * Thiết lập môi trường phân tích
