@@ -9,6 +9,7 @@ n {
 	qui log using "$resutl$system_sep`time_string'_statin.smcl", replace
 }
 
+count
 
 des
 
