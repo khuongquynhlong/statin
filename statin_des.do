@@ -17,3 +17,12 @@ table1, vars (gioi_tinh cat\ ) ///
 			  format(%2.1f) one saving("$result\table1.xls", sheet (Sheet1, replace))
 
 qui log close _all
+
+
+qui log using "$res_ai_pt\statin_test.smcl", replace
+
+
+
+count
+
+qui log close _all

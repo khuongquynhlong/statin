@@ -30,7 +30,7 @@ clear
 global result 		"E:\ncmr_work\working\statin"
 
 global data_path 	"E:\ncmr_work\working\statin"
-* global data_file    "C:\Projects\private\ai_sau_pt\data\statin_final.dta"
+global res_ai_pt    "C:\Users\hung\Dropbox\Shared\ai_pt\result"
 global resutl 		"C:\Users\hung\Dropbox\hung\ProjectsDocs\Private\ai_pt_moi\result"
 global dataname     "statin_final.csv"
 global datastata    "statin_final.dta"
