@@ -12,5 +12,7 @@ n {
 
 des
 
+table1, vars (gioi_tinh cat\ ) ///
+			  format(%2.1f) one saving("$result\table1.xls", sheet (Sheet1, replace))
 
 qui log close _all
