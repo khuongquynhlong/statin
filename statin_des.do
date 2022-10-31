@@ -74,7 +74,6 @@ tab statin_yn if first_obs == 1
 
 sum if first_obs == 1
 
-
 bys ma_the: gen statin_itt = statin_yn if first_obs == 1
 bys ma_the: egen statin_bs = total(statin_itt)
 
@@ -83,14 +82,43 @@ count if lasttime == stt2 | first_obs == 1
 
 count if lasttime == stt2
 
+* keep if lasttime == stt2
+
+tab xhn if lasttime == stt2 | first_obs == 1
+tab statin_bs if lasttime == stt2 | first_obs == 1
+
+tab xhn statin_bs if lasttime == stt2 | first_obs == 1, chi exact ro co exp
+
+cs xhn statin_bs if lasttime == stt2 | first_obs == 1, or
+
+
+foreach var of varlist machvanh vantim rungnhi nutxoang than_roiloan dongmau {
+			bys ma_the: gen `var'_itt = `var' if first_obs == 1
+			bys ma_the: egen `var'_bs = total(`var'_itt)
+}
+
+gen condition1 = 1
+replace condition1 = 0 if machvanh_bs ==1 | vantim_bs ==1 |rungnhi_bs ==1 |nutxoang_bs ==1 |than_roiloan_bs ==1 |dongmau_bs ==1
+
+gen condition2 = 1
+replace condition2 = 0 if machvanh_bs ==1 | vantim_bs ==1 |rungnhi_bs ==1 |nutxoang_bs ==1 |dongmau_bs ==1
+
+
+
 keep if lasttime == stt2
 
-tab xhn 
-tab statin_bs 
+tab xhn if condition1 == 1
+tab statin_bs if condition1 == 1
 
-tab xhn statin_bs, chi exact ro co exp
+tab xhn statin_bs if condition1 == 1, chi exact ro co exp
+cs xhn statin_bs if condition1 == 1, or
 
-cs xhn statin_bs, or
+tab xhn if condition2 == 1
+tab statin_bs if condition2 == 1
+
+tab xhn statin_bs if condition2 == 1, chi exact ro co exp
+cs xhn statin_bs if condition2 == 1, or
+
 
 
 
