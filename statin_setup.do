@@ -6,24 +6,11 @@ cap log close _all
 clear 
 
 *----- Cài đặt các gói cần thiết 
-/*
-	capture which table1
-	if _rc == 111 {
-	ssc install table1
-	}
-	capture which st0408 //distinct
-	if _rc == 111 {
+
+capture which dm0042_2
 	net from http://www.stata-journal.com/software/sj15-3
-	net install st0408
-	}
-	capture which st0085_2 //eststo
-	if _rc == 111 {
-	net from http://www.stata-journal.com/software/sj14-2
-	net install st0085_2 
-	}
-
-*/
-
+	net install dm0042_2
+}
 
 * Thiết lập môi trường phân tích
 
